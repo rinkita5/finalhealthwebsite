@@ -1,0 +1,554 @@
+/*Googlefonts*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200;1,600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2 rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    padding: 50px 10%;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(240, 246, 246);
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+    padding: 15px 10%;
+    transition: 0.2s;
+    height: 58px;
+}
+
+.logo {
+    color: rgb(83, 140, 142);
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 17px;
+    padding: 11px 20px;
+    color: rgb(27, 27, 27);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    color: cadetblue;
+}
+
+header .icon i {
+    font-size: 18px;
+    color: black;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+header .icon i:hover {
+    color: rgb(83, 140, 142);
+}
+
+#menuicon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+.home {
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5) 50%),
+        url("background 1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 98vw;
+    align-items: center;
+}
+
+.hometext {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: rgb(246, 251, 251);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hometext .par {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    color: rgb(141, 192, 192);
+}
+
+.hometext h1 {
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 13%;
+    letter-spacing: 2px;
+}
+
+.btn {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    background-color: rgb(83, 140, 142);
+    font-weight: 500;
+    margin-left: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: rgb(246, 251, 251);
+    color: rgb(83, 140, 142);
+    font-weight: 800;
+}
+
+.form {
+    width: 275px;
+    height: 380px;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8),
+            rgba(29, 26, 26, 0.8) 25%);
+    position: absolute;
+    top: -20px;
+    left: 870px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form h2 {
+    width: 220px;
+    font-family: sans-serif;
+    text-align: center;
+    color: azure;
+    font-size: 22px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.form input {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-bottom: 1px solid rgb(141, 192, 192);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: azure;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+::placeholder {
+    color: azure;
+    font-family: Arial;
+}
+
+.btnn {
+    width: 240px;
+    height: 40px;
+    background-color: rgb(141, 192, 192);
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: azure;
+    transition: 0.4s ease;
+}
+
+.btnn:hover {
+    background: azure;
+    color: ch;
+}
+
+.btnn a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.form .link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.form .link a {
+    text-decoration: none;
+    color: rgb(141, 192, 192);
+}
+
+.liw {
+    color: rgb(141, 192, 192);
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.icon a {
+    text-decoration: none;
+    color: azure;
+}
+
+.icon ion-icon {
+    color: azure;
+    font-size: 25px;
+    padding-left: 14 px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+
+.icon ion-icon:hover {
+    color: rgb(141, 192, 192);
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading span {
+    color: black;
+    font-size: 40px;
+}
+
+.heading h1 {
+    color: rgb(83, 140, 142);
+    font-size: 40px;
+    text-align: center;
+}
+
+.about .about_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .about_main .image img {
+    width: 600px;
+    position: relative;
+    top: 70px;
+    height: 400px;
+}
+
+.about .about_main .heading p {
+    text-align: justify;
+    line-height: 22px;
+    margin-left: 30px;
+}
+
+/* services */
+.service {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.service h1 {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.service h1 span {
+    color: rgb(83, 140, 142);
+    margin-left: 15px;
+}
+
+.service .servicebox {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.service .servicebox .servicecard {
+    width: 325px;
+    height: 480px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.service .servicebox .servicecard .serviceimage {
+    width: 300px;
+    height: 240px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.service .servicebox .servicecard .serviceimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.2s;
+}
+
+.service .servicebox .servicecard .serviceimage:hover img {
+    transform: scale(1.1);
+}
+
+.service .servicebox .servicecard .serviceinfo h2 {
+    width: 60%;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    font-size: 17px;
+    color: rgb(74, 126, 128);
+}
+
+.service .servicebox .servicecard .serviceinfo p {
+    text-align: center;
+    margin-top: 8px;
+    line-height: 21px;
+    font-size: 12px;
+}
+
+.service .servicebox .servicecard .serviceinfo h3 {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(74, 126, 128);
+    font-size: 14px;
+}
+
+.service .servicebox .servicecard .serviceinfo .servicebtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: azure;
+    background-color: rgb(74, 126, 128);
+    padding: 8px 10px;
+    margin: 0 100px;
+    border-radius: 80px;
+    margin-top: 40px;
+    transition: 0.2s;
+}
+
+.service .servicebox .servicecard .serviceinfo .servicebtn:hover {
+    background-color: azure;
+    color: rgb(74, 126, 128);
+    border: solid 1px rgb(74, 126, 128);
+}
+
+/*Gallery*/
+.gallery {
+    width: 100%;
+    padding: 70px 0;
+}
+
+.gallery h1 {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery h1 span {
+    margin-left: 15px;
+    color: rgb(74, 126, 128);
+}
+
+.gallery .galleryimagebox {
+    width: 95%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.gallery .galleryimagebox .galleryimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.gallery .galleryimagebox .galleryimage img {
+    width: 320px;
+    height: 320px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.gallery .galleryimagebox .galleryimage:hover img {
+    transform: scale(0.8) rotate(-15deg);
+    border-radius: 20px;
+    box-shadow: 0 32 75px rgba(29, 26, 26, 0.2);
+}
+
+/*review */
+.review {
+    width: 100%;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.review h2 {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review h2 span {
+    margin-left: 15px;
+    color: rgb(74, 126, 128);
+}
+
+.review .wrapper {
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-left: 120px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review .wrapper .box {
+    background: rgb(229, 249, 249);
+    border-radius: 3px;
+    padding: 25px;
+    width: calc(33% - 10px);
+}
+
+.review .wrapper .box p {
+    color: grey;
+}
+
+.review .wrapper .box i {
+    font-size: 20px;
+    color: rgb(75, 124, 125);
+}
+
+.review .wrapper .box .contents {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.review .wrapper .box .info .name {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.review .wrapper .box .info .job {
+    color: rgb(74, 126, 128);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.review .wrapper .box .info .stars {
+    margin-top: 2px;
+}
+
+.review .wrapper .box .info .stars i {
+    color: rgb(83, 140, 142);
+}
+
+.review .wrapper .box .contents .revimage {
+    height: 75px;
+    width: 75px;
+    padding: 3px;
+    background: rgb(83, 140, 142);
+    border-radius: 50%;
+}
+
+.review .wrapper .box .contents .revimage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgb(83, 140, 142);
+}
+
+/*footer */
+footer {
+    width: 100%;
+    padding: 30px 0 0 20px;
+    background: azure;
+}
+
+footer .footer_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer .footer_main .footer_tag {
+    text-align: center;
+}
+
+footer .footer_main .footer_tag h2 {
+    color: rgb(74, 126, 128);
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+footer .footer_main .footer_tag p {
+    margin: 10px 0;
+}
+
+footer .footer_main .footer_tag i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+footer .footer_main .footer_tag i:hover {
+    color: rgb(83, 140, 142);
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(83, 140, 142);
+    border-radius: 15px;
+}

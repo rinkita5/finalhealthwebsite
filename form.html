@@ -1,0 +1,161 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sstyle.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>registration form</h2>
+        </div>
+        <form class="form" id="form">
+            <div class="formcontrol">
+                <label>Username:</label>
+                <input type="text" name="" id="username" placeholder="Enter your full name" autocomplete="off" />
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="formcontrol">
+                <label>Email:</label>
+                <input type="email" name="" id="email" placeholder="Enter your full email address" autocomplete="off" />
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="formcontrol">
+                <label>Phone number:</label>
+                <input type="number" name="" id="phone" placeholder="Enter your phone number" autocomplete="off" />
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="formcontrol">
+                <label>Password:</label>
+                <input type="password" name="" id="password" placeholder="Enter your password" autocomplete="off" />
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="formcontrol">
+                <label>Confirm Password:</label>
+                <input type="password" name="" id="cpassword" placeholder="RE-Enter your password" autocomplete="off" />
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+            <input type="submit" value="submit" class="btn" />
+        </form>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        const form = document.getElementById("form"); //for accessing data written by user
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password");
+        const cpassword = document.getElementById("cpassword");
+        //when submitting there wont be question mark in the website url.we use addeventlistener and prevent default for it.
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            validate();
+        });
+
+        //for email validation
+        const isemail = (emailval) => {
+            var atsymbol = emailval.indexOf("@");
+            if (atsymbol < 1) return false; //to not put @in the starting.ie. if @ is at the index less than one.
+            var dot = emailval.lastIndexOf("."); //usually there is no double triple . before @. But in case , if there is, we are putting lastindexof.
+            if (dot <= atsymbol + 3) return false; //if dot index is less than after@ 3 values
+            if (dot === emailval.length - 1) return false; //if .is in the last
+            return true;
+        };
+        //now for validation , validation function
+        const validate = () => {
+            //trim removes any white spaces before and after username,phone number or anything.
+            const usernameval = username.value.trim();
+            const emailval = email.value.trim();
+            const phoneval = phone.value.trim();
+            const passwordval = password.value.trim();
+            const cpasswordval = cpassword.value.trim();
+
+            //validating username
+            if (usernameval === "") {
+                seterrormsg(username, "username cannot be blank"); //if username is empty,errormsg will be called where forwhich field we want to send error msge is written in first parenthesis.
+            } else if (usernameval.length <= 5) {
+                seterrormsg(
+                    username,
+                    "username should be at least 5 characters long."
+                );
+            } else {
+                setsuccessmsg(username);
+            }
+
+            //validating email
+            if (emailval === "") {
+                seterrormsg(email, "Email cannot be blank");
+            }
+            //inside else if , a function is called i.e is email.email value is passed through it.
+            else if (!isemail(emailval)) {
+                seterrormsg(email, "Not a valid email");
+            } else {
+                setsuccessmsg(email);
+            }
+
+            //validating phone
+            if (phoneval === "") {
+                seterrormsg(phone, "phone number cannot be blank");
+            } else if (phoneval.length != 10) {
+                seterrormsg(phone, "Not a valid phone number");
+            } else {
+                setsuccessmsg(phone);
+            }
+
+            //validating password
+            if (passwordval === "") {
+                seterrormsg(password, "Password cannot be blank");
+            } else if (passwordval <= 6) {
+                errormsg(password, "Minimum 6 characters.");
+            } else {
+                setsuccessmsg(password);
+            }
+
+            //validating cpassword
+            if (cpasswordval === "") {
+                seterrormsg(cpassword, "Confirm Password cannot be blank");
+            } else if (cpasswordval !== passwordval) {
+                errormsg(cpassword, "Password not matched");
+            } else {
+                setsuccessmsg(cpassword);
+            }
+        };
+
+        function seterrormsg(input, errormsgs) {
+            //to show email error during email, username error during username:
+            //we have class form control and small.here in small, in errormsg of small, we are sending seterrormsge of emails,username.
+            const formControl = input.parentElement;
+            const small = formControl.querySelector("small");
+            formControl.className = "formcontrol error"; //to get red color when wrong csspart is accessed.
+            small.innerText = errormsgs; //to end seerror msge.
+        }
+
+        function setsuccessmsg(input) {
+            const formControl = input.parentElement;
+            formControl.className = "formcontrol success";
+        }
+    </script>
+</body>
+
+</html>
